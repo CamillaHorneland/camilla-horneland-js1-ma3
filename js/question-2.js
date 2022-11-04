@@ -1,12 +1,33 @@
-const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=3b413b2f3a9f43b6aa2baee45dafdfcb";
+const url = `https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=3b413b2f3a9f43b6aa2baee45dafdfcb`;
 
 
 const dataContainer = document.querySelector(".data");
 
-async function getData() {
+async function getData(url) {
+    try {
+        const response = await fetch(url);
+        
+        const data = await response.json();
 
-    const response = await fetch(url);
+        console.log(data);
+   
+        dataContainer.innerHTML= "";
+
+    } catch (error) {
+        console.log(error);
+        dataContainer.innerHTML =alert("error", error);
+    }
+
+    //for (let i = 0; i < games.length; i++) {
+       // console.log(games[i].name);
+
+        //if (i === 7) {
+           // break;
+        //}
+
+       // dataContainer.innerHTML += `<div class="data">${games[i].text}</div>`;
+    //}
 }
 
+getData();
 
-//key 3b413b2f3a9f43b6aa2baee45dafdfcb
