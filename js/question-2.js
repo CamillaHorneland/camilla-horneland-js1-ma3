@@ -20,7 +20,7 @@ async function getData() {
             console.log(games[i].name);
             console.log(games[i].tags.length);
 
-            if (i === 7) {
+            if (i === 8) {
               break;
         }
 
