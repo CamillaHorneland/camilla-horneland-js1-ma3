@@ -1,3 +1,7 @@
+h1 {
+    margin: 30px;
+}
+
 .name,
 .rating,
 .tags_count {
