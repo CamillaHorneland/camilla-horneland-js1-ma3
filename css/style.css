@@ -1,0 +1,9 @@
+.name,
+.rating,
+.tags_count {
+    margin: 5px;
+}
+
+.data {
+    margin: 25px;
+}
