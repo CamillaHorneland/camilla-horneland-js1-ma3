@@ -9,25 +9,33 @@ async function getData() {
         
         const data = await response.json();
 
-        console.log(data);
+        console.log();
 
-        const games = games.results;
+        const games = data.results || [];
    
         dataContainer.innerHTML = "";
 
         for (let i = 0; i < games.length; i++) {
+            console.log(games[i].rating);
             console.log(games[i].name);
+            console.log(games[i].tags.length);
 
             if (i === 7) {
               break;
         }
 
-        dataContainer.innerHTML += `<div class="data">${games[i].name}</div>`;
+        dataContainer.innerHTML += `
+            <div class="data">
+                <span class="name">${games[i].name}</span>
+                <span class="rating">${games[i].rating}</span>
+                <span class="tags_count">${games[i].tags.length}</span>
+            </div>
+        `;
     }
 
     } catch (error) {
         console.log(error);
-        dataContainer.innerHTML =alert("error", error);
+       alert("error", error.message);
     }
 
 }
